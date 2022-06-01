@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-liveeasy-dev-04309-authRole",
+      "UnauthRoleArn": "arn:aws:iam::564718218222:role/amplify-liveeasy-dev-04309-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::564718218222:role/amplify-liveeasy-dev-04309-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-liveeasy-dev-04309-deployment",
+      "UnauthRoleName": "amplify-liveeasy-dev-04309-unauthRole",
+      "StackName": "amplify-liveeasy-dev-04309",
+      "StackId": "arn:aws:cloudformation:us-east-1:564718218222:stack/amplify-liveeasy-dev-04309/49f73c40-e122-11ec-9298-0e8a1c77e3ef",
+      "AmplifyAppId": "d1qqfxvnbg8cqg"
+    },
+    "categories": {
+      "auth": {
+        "liveeasy9b0408af": {}
+      }
+    }
+  }
+}

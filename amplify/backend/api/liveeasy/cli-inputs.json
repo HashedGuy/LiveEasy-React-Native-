@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "liveeasy",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/arbus/Documents/sia/amplify/backend/api/liveeasy/schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 7
+    }
+  }
+}
