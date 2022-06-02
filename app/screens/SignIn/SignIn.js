@@ -1,27 +1,36 @@
 import { View, Text, StyleSheet, ImageBackground, Image, Alert } from 'react-native'
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import CustomInput from '../../components/CustomInput'
 import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
 import { TouchableHighlight } from 'react-native-gesture-handler'
-
-import { Auth } from 'aws-amplify'
-
-const NavigatetoScreen = (props)=> {
-    props.navigation.navigate('Sign Up')
-}
+import { auth } from '../../../firebase'
 
 const SignIn = () => {
-    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const navigation = useNavigation()
 
+    useEffect(()=> {
+        const unsubscribe = auth.onAuthStateChanged(user => {
+            if(user) {
+                navigation.replace('Home')
+            }
+        })
+        return unsubscribe
+    }, [])
+
+    const handleSignIn = () => {
+        auth
+            .signInWithEmailAndPassword(email, password)
+            .then(userCredentials => {
+                const user = userCredentials.user
+                console.log(`Signed In with: ${user.email}`)
+            })
+            .catch(e => alert(e.message))
+    }
     const onSignInPressed = async (data) => {
-        try {const response = await Auth.signIn(data.username, data.password)
-        console.log(response)}
-        catch(e) {
-            Alert.alert('Wrong password!', e.message)
-        }
+        navigation.navigate('Home')
     }
 
     const onLogoPressed = () => {
@@ -53,9 +62,9 @@ const SignIn = () => {
             </View>
             <Text style={styles.welcomeTitle}>Welcome to Live Easy</Text>
             <CustomInput 
-                placeholder='Email or username' 
-                value={username} 
-                setValue={setUsername} 
+                placeholder='Email' 
+                value={email} 
+                setValue={setEmail} 
                 securityTextEntry={false}
                 textContentType='emailAddress'/>
             
@@ -67,7 +76,7 @@ const SignIn = () => {
                 textContentType='password'/>
           
             <CustomButton 
-                onPress={onSignInPressed}
+                onPress={handleSignIn}
                 text='Sign In'
                 />
             <CustomButton 

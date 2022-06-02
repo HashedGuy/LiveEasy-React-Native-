@@ -4,6 +4,7 @@ import CustomInput from '../components/CustomInput'
 import CustomButton from '../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
 import { TouchableHighlight } from 'react-native-gesture-handler'
+import { auth } from '../../firebase'
 
 const SignUp = () => {
     const [username, setUsername] = useState('')
@@ -11,6 +12,16 @@ const SignUp = () => {
     const [password, setPassword] = useState('')
     const [passwordRepeat, setPasswordRepeat] = useState('')
     const navigation = useNavigation()
+
+    const handleSingup = () => {
+        auth
+            .createUserWithEmailAndPassword(email, password)
+            .then(userCredentials => {
+                const user = userCredentials.user
+                console.log(user.email)
+            })
+            .catch(e => alert(e.message))
+    }
 
     const onRegisterPressed = () => {
         navigation.navigate('Confirm Your Email')
@@ -67,7 +78,7 @@ const SignUp = () => {
                 textContentType='password'/>
           
             <CustomButton 
-                onPress={onRegisterPressed}
+                onPress={handleSingup}
                 text='Register'
                 />
             <Text style={styles.text}>

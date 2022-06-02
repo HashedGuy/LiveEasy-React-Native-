@@ -1,15 +1,27 @@
 import React, {useEffect, useRef} from 'react'
 import { Animated, ImageBackground, StyleSheet, View, Image, Text, Button, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import CustomButton from '../components/CustomButton'
+import { auth } from '../../firebase'
+import { useThree } from '@react-three/fiber'
 
 function WelcomeScreen(props) {
 
     const navigation = useNavigation()
 
+    const handleSignOut = () => {
+        auth
+            .signOut()
+            .then(()=> {
+                navigation.replace('Sign In')
+            })
+            .catch(e=>alert(e.message))
+    }
+
     const onLogoPressed = () => {
         navigation.navigate('Home')
     }
-    
+
     const onReservePressed= () => {
         navigation.navigate('Sign In')
     }
@@ -57,6 +69,11 @@ function WelcomeScreen(props) {
             {/* <Button style={styles.loginButton} title='Log In'></Button> */}
            
         </View>
+        <CustomButton 
+            text='Sign Out'
+            onPress={handleSignOut}
+        />
+        <Text>Email: ${auth.currentUser?.email}</Text>
         <View style={styles.featureButton}>
             <Text style={styles.newFeature}>New! Freeze your pricing 🥶 </Text>
         </View>
