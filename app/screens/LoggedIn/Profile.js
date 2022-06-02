@@ -69,6 +69,7 @@ function ProfileScreen(props) {
             <TouchableOpacity onPress={onReservePressed}>
                 <CustomButton 
                     text={'Edit your profile'}
+                    type='TERTIARY'
                 />
               
             </TouchableOpacity>
@@ -83,7 +84,7 @@ function ProfileScreen(props) {
                       borderRadius={10}
                       opacity={.6}
                     >
-                        <Text style={styles.profileInfoText}>Medium unit</Text>
+                        <Text style={styles.rentedInfoText}>Medium unit</Text>
                         <CustomButton type='MORE' text='Extend'/>
                         <Text style={styles.dueDate}>Due date: 2 Aug, 2022</Text>
                     </ImageBackground>
@@ -95,9 +96,9 @@ function ProfileScreen(props) {
                       borderRadius={10}
                       opacity={.6}
                     >
-                        <Text style={styles.profileInfoText}>Add new</Text>
+                        <Text style={styles.rentedInfoText}>Add new</Text>
                         <CustomButton type='MORE' text='+'/>
-                        <Text style={styles.dueDate}>Discounts</Text>
+                        {/* <Text style={styles.dueDate}>Discounts</Text> */}
                     </ImageBackground>
                 </View>
             </View>
@@ -149,7 +150,12 @@ const styles = StyleSheet.create({
         fontSize: 25,
         color: '#30599c'
     },
-
+    rentedInfoText: {
+        color: 'white',
+        backgroundColor: 'orange',
+        fontSize: 20,
+        padding: 3
+    },
     signOut: {
         position: 'absolute',
         top: 50,
@@ -172,9 +178,12 @@ const styles = StyleSheet.create({
         opacity: 1
     },
     dueDate: {
-        color: '#e35672',
+        color: 'white',
         fontSize: 12,
-        marginTop: 20
+        marginTop: 20,
+        fontWeight: 'bold',
+        backgroundColor: 'red',
+        padding: 2
     },
     bgImgRentBox: {
         backgroundSize: 'cover'

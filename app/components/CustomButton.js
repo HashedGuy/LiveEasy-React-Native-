@@ -30,7 +30,9 @@ const styles = StyleSheet.create({
     container_MORE: {
         width: '60%',
         backgroundColor: '#24bf50',
-        padding: 10
+        padding: 5,
+        borderWidth: .3,
+        borderColor: '#e3e8e5'
     },
     text: {
         textAlign: 'center',
