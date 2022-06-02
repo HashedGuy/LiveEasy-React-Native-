@@ -1,11 +1,11 @@
 import React, {useEffect, useRef} from 'react'
 import { Animated, ImageBackground, StyleSheet, View, Image, Text, Button, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import CustomButton from '../components/CustomButton'
-import { auth } from '../../firebase'
+import CustomButton from '../../components/CustomButton'
+import { auth } from '../../../firebase'
 import { useThree } from '@react-three/fiber'
 
-function WelcomeScreen(props) {
+function WelcomeUserScreen(props) {
 
     const navigation = useNavigation()
 
@@ -18,8 +18,8 @@ function WelcomeScreen(props) {
             .catch(e=>alert(e.message))
     }
 
-    const onLogoPressed = () => {
-        navigation.navigate('Home')
+    const handleProfile = () => {
+        navigation.replace('Profile')
     }
 
     const onReservePressed= () => {
@@ -41,14 +41,26 @@ function WelcomeScreen(props) {
     <ImageBackground
         style={styles.background}
     >   
+         <View style={styles.signOut}>
+            <CustomButton 
+                text='Profile'
+                onPress={handleProfile}
+                type='TERTIARY'
+            />
+            <CustomButton 
+                text='Sign Out'
+                onPress={handleSignOut}
+                type='TERTIARY'
+            />
+        </View>
+        
         <View style={styles.logoContainer}>
             <Image 
-                onPress={onLogoPressed}
                 resizeMode='contain'
                 style={styles.logoWelcome} 
-                source={require('../assets/logoLE.png')}
+                source={require('../../assets/logoLE.png')}
             />
-            <Text style={styles.welcomeTitle}>The storage choice of international community in Beijing</Text>
+            <Text style={styles.welcomeTitle}>User: {auth.currentUser?.email}</Text>
             <TouchableOpacity onPress={onReservePressed}>
                 <Animated.View  
                     
@@ -66,20 +78,14 @@ function WelcomeScreen(props) {
                 </Animated.View>
               
             </TouchableOpacity>
-            {/* <Button style={styles.loginButton} title='Log In'></Button> */}
            
         </View>
-        <CustomButton 
-            text='Sign Out'
-            onPress={handleSignOut}
-        />
-        <Text>Email: ${auth.currentUser?.email}</Text>
+       
         <View style={styles.featureButton}>
             <Text style={styles.newFeature}>New! Freeze your pricing 🥶 </Text>
         </View>
 
     </ImageBackground>
-    {/* <ImageBackground style={styles.background}/> */}
     </>
   )
 }
@@ -116,19 +122,25 @@ const styles = StyleSheet.create({
         marginBottom : 20,
         textAlign: 'center'
     },
-
     newFeature: {
         color: '#7C73D9',
         fontSize: 20,
         marginTop: 10
     },
     reserveButtonText: {
-        color: '#2E2E2E',
+        color: '#30599c',
         fontSize: 20,
     },
     loginButton: {
         marginTop: 100
+    },
+    signOut: {
+        position: 'absolute',
+        top: 50,
+        width: '95%',
+        flexDirection: 'row',
+        justifyContent: 'space-between' 
     }
 })
 
-export default WelcomeScreen
+export default WelcomeUserScreen

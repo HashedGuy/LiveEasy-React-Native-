@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, ImageBackground, Image } from 'react-native'
 import React, {useState} from 'react'
-import CustomInput from '../components/CustomInput'
-import CustomButton from '../components/CustomButton'
+import CustomInput from '../../components/CustomInput'
+import CustomButton from '../../components/CustomButton'
 import { useNavigation } from '@react-navigation/native'
 import { TouchableHighlight } from 'react-native-gesture-handler'
-import { auth } from '../../firebase'
+import { auth } from '../../../firebase'
 
 const SignUp = () => {
     const [username, setUsername] = useState('')
@@ -46,7 +46,7 @@ const SignUp = () => {
                     
                         resizeMode='contain'
                         style={styles.logoWelcome} 
-                        source={require('../assets/logoLE.png')}
+                        source={require('../../assets/logoLE.png')}
                     />
                 </TouchableHighlight>
             </View>

@@ -27,7 +27,11 @@ const styles = StyleSheet.create({
     container_noAccount: {
         bottom: 60,
     },
-
+    container_MORE: {
+        width: '60%',
+        backgroundColor: 'lightgreen',
+        padding: 10
+    },
     text: {
         textAlign: 'center',
         fontSize: 15
@@ -36,6 +40,10 @@ const styles = StyleSheet.create({
     text_PRIMARY: {
         color: 'white'
     },
+
+    text_MORE: {
+        color: 'white'
+    },  
 
     text_TERTIARY: {
         color: '#E8E8E8'

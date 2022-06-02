@@ -14,7 +14,7 @@ const SignIn = () => {
     useEffect(()=> {
         const unsubscribe = auth.onAuthStateChanged(user => {
             if(user) {
-                navigation.replace('Home')
+                navigation.replace('Welcome User')
             }
         })
         return unsubscribe

@@ -1,12 +1,14 @@
 import React from 'react'
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { NavigationContainer } from '@react-navigation/native'
-import WelcomeScreen from "../app/screens/WelcomeScreen"
-import SignIn from '../app/screens/SignIn'
-import SignUp from '../app/screens/SignUp'
-import ConfirmSignUp from '../app/screens/ConfirmSignUp'
-import ResetPassword from '../app/screens/ResetPassword'
-import ResetPasswordNext from '../app/screens/ResetPasswordNext'
+import WelcomeScreen from "../app/screens/NotLoggedIn/WelcomeScreen"
+import SignIn from '../app/screens/NotLoggedIn/SignIn'
+import SignUp from '../app/screens/NotLoggedIn/SignUp'
+import ConfirmSignUp from '../app/screens/NotLoggedIn/ConfirmSignUp'
+import ResetPassword from '../app/screens/NotLoggedIn/ResetPassword'
+import ResetPasswordNext from '../app/screens/NotLoggedIn/ResetPasswordNext'
+import WelcomeUserScreen from '../app/screens/LoggedIn/welcomeUser'
+import ProfileScreen from '../app/screens/LoggedIn/Profile'
 
 
 const Stack = createNativeStackNavigator()
@@ -21,6 +23,8 @@ export const Navigator = () => {
         <Stack.Screen name='Confirm Your Email' component={ConfirmSignUp} />
         <Stack.Screen name='Reset Your Password' component={ResetPassword} />
         <Stack.Screen name='Reset Password' component={ResetPasswordNext} />
+        <Stack.Screen name='Welcome User' component={WelcomeUserScreen} />
+        <Stack.Screen name='Profile' component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
