@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     },
     container_MORE: {
         width: '60%',
-        backgroundColor: 'lightgreen',
+        backgroundColor: '#24bf50',
         padding: 10
     },
     text: {

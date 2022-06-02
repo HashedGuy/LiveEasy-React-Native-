@@ -75,15 +75,30 @@ function ProfileScreen(props) {
             <View style={styles.rentInfo}>
                 <Text style={styles.rentInfoText}>Rented storage</Text>
                 <View style={styles.rentedContainer}>
-                    <View style={styles.rentedBox}>
+                  
+                    <ImageBackground
+                      style={styles.rentedBox}
+                      source={require('../../assets/boxes.jpeg')}
+                      resizeMode='stretch'
+                      borderRadius={10}
+                      opacity={.6}
+                    >
                         <Text style={styles.profileInfoText}>Medium unit</Text>
                         <CustomButton type='MORE' text='Extend'/>
                         <Text style={styles.dueDate}>Due date: 2 Aug, 2022</Text>
-                    </View>
-                    <View style={styles.rentedBox}>
+                    </ImageBackground>
+                
+                    <ImageBackground
+                      style={styles.rentedBox}
+                      source={require('../../assets/d1.jpeg')}
+                      resizeMode='stretch'
+                      borderRadius={10}
+                      opacity={.6}
+                    >
                         <Text style={styles.profileInfoText}>Add new</Text>
                         <CustomButton type='MORE' text='+'/>
-                    </View>
+                        <Text style={styles.dueDate}>Discounts</Text>
+                    </ImageBackground>
                 </View>
             </View>
 
@@ -148,19 +163,21 @@ const styles = StyleSheet.create({
         width: '100%'
     },  
     rentedBox: {
-        borderWidth: 1,
-        borderRadius: 10,
-        width: 150,
-        height: 200,
+        width: 160,
+        height: 250,
         marginVertical: 30,
         borderColor: 'white',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        opacity: 1
     },
     dueDate: {
-        color: 'red',
+        color: '#e35672',
         fontSize: 12,
-        marginTop: 10
+        marginTop: 20
+    },
+    bgImgRentBox: {
+        backgroundSize: 'cover'
     }
 })
 
