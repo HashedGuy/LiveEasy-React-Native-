@@ -28,14 +28,18 @@ function WelcomeScreen(props) {
                     <Text style={styles.searchBtnText}><FontListo name='search' size={14} color='orange'/>  Where do you want to store?</Text>
             </TouchableOpacity>
 
-            <Image 
-                onPress={onLogoPressed}
-                resizeMode='contain'
-                style={styles.logoWelcome} 
-                source={require('../../assets/logoLE.png')}
-            />
-             <View style={styles.logoContainer}>
-            <Text style={styles.welcomeTitle}>The storage choice of international community in Beijing</Text>
+            <View style={styles.logoContainer}>
+                <Image 
+                    onPress={onLogoPressed}
+                    resizeMode='contain'
+                    style={styles.logoWelcome} 
+                    source={require('../../assets/logoLE.png')}
+                />
+                <Text style={styles.welcomeTitle}>The storage choice of international community in Beijing</Text>
+            </View>
+            
+             <View style={styles.exploreContainer}>
+           
             
                 <TouchableOpacity 
                     style={styles.exploreBtn}
