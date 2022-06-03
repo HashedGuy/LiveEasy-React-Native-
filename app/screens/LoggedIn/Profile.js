@@ -3,7 +3,8 @@ import { Animated, ImageBackground, StyleSheet, View, Image, Text, TouchableHigh
 import { useNavigation } from '@react-navigation/native'
 import CustomButton from '../../components/CustomButton'
 import { auth } from '../../../firebase'
-import { useThree } from '@react-three/fiber'
+import Entype from 'react-native-vector-icons/Entypo'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 function ProfileScreen(props) {
 
@@ -38,6 +39,7 @@ function ProfileScreen(props) {
 
   return (
       <>
+
     <ImageBackground
         style={styles.background}
     >   
@@ -61,20 +63,19 @@ function ProfileScreen(props) {
         <View style={styles.logoContainer}>
             
             <View style={styles.profileInfoBox}>
-                <Text style={styles.profileInfoText}>User: {auth.currentUser?.email}</Text>
-                <Text style={styles.profileInfoText}>Name: </Text>
-                <Text style={styles.profileInfoText}>Account created: </Text>
-                <Text style={styles.profileInfoText}>Password: *****</Text>
+                <Text style={styles.profileInfoText}><Entype size={16} name='man' color={'yellow'}/>  User: {auth.currentUser?.email}</Text>
+                {/* <Text style={styles.profileInfoText}>Name: </Text> */}
+                <Text style={styles.profileInfoText}><Entype size={16} name='clock' color={'yellow'}/>  Account created: </Text>
+                <Text style={styles.profileInfoText}><Entype size={16} name='key' color={'yellow'}/>  Password: *****</Text>
             </View>
             <TouchableOpacity onPress={onReservePressed}>
                 <CustomButton 
-                    text={'Edit your profile'}
+                    text={`Edit your profile `}
                     type='TERTIARY'
                 />
-              
             </TouchableOpacity>
             <View style={styles.rentInfo}>
-                <Text style={styles.rentInfoText}>Rented units</Text>
+                <Text style={styles.rentInfoText}><Entype size={24} name='home' color={'#30599c'}/>  Rented units</Text>
                 <View style={styles.rentedContainer}>
                   
                     <ImageBackground
@@ -116,7 +117,7 @@ function ProfileScreen(props) {
 const styles = StyleSheet.create({
     background: {
         flex: 1,
-        justifyContent: 'flex-end',
+        justifyContent: 'flex-start',
         backgroundColor: '#00D1D1'
     },
     logoContainer: {

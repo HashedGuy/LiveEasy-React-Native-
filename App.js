@@ -1,11 +1,15 @@
 import React from 'react';
 import {Navigator} from "./routes/homeStack";
+import {StatusBar} from 'react-native'
 
 
 
 const App = () => {
   return (
-    <Navigator/>
+    <>
+      <StatusBar barStyle='light-content'/>
+      <Navigator/>
+    </>
   )
 }
 
