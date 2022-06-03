@@ -74,7 +74,7 @@ function ProfileScreen(props) {
               
             </TouchableOpacity>
             <View style={styles.rentInfo}>
-                <Text style={styles.rentInfoText}>Rented storage</Text>
+                <Text style={styles.rentInfoText}>Rented units</Text>
                 <View style={styles.rentedContainer}>
                   
                     <ImageBackground
@@ -148,13 +148,15 @@ const styles = StyleSheet.create({
     },
     rentInfoText: {
         fontSize: 25,
-        color: '#30599c'
+        color: '#30599c',
+        marginTop: 20,
     },
     rentedInfoText: {
         color: 'white',
         backgroundColor: 'orange',
         fontSize: 20,
-        padding: 3
+        padding: 3,
+        marginBottom: 20
     },
     signOut: {
         position: 'absolute',
@@ -180,10 +182,10 @@ const styles = StyleSheet.create({
     dueDate: {
         color: 'white',
         fontSize: 12,
-        marginTop: 20,
+        marginTop: 40,
         fontWeight: 'bold',
         backgroundColor: 'red',
-        padding: 2
+        padding: 3
     },
     bgImgRentBox: {
         backgroundSize: 'cover'
