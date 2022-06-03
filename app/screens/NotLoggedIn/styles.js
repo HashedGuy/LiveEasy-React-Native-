@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         padding: 12,
         borderRadius: 30,
         maxWidth: '75%',
-        top: 50,
+        top: 20,
         alignSelf: 'center',
         zIndex: 100
     },
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         width: 150,
         height: 150,
         alignSelf: 'center',
-        marginTop: 50 
+        marginTop: 30 
     },
     welcomeTitle: {
         color: 'white',
@@ -50,8 +50,13 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold'
     },
-    loginButton: {
-        marginTop: 100
+    loginBtn: {
+        alignSelf: 'flex-end',
+        marginTop: 50,
+        marginHorizontal: 20
+    },
+    loginBtntext: {
+        textAlign: 'right'
     }
 })
 

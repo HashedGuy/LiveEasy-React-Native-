@@ -3,7 +3,6 @@ import { Animated, ImageBackground, StyleSheet, View, Image, Text, Button, Touch
 import { useNavigation } from '@react-navigation/native'
 import CustomButton from '../../components/CustomButton'
 import { auth } from '../../../firebase'
-import { useThree } from '@react-three/fiber'
 
 function WelcomeUserScreen(props) {
 

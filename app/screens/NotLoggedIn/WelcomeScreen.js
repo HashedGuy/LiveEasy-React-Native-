@@ -2,6 +2,7 @@ import React from 'react'
 import { ImageBackground, View, Image, Text, Button, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import FontListo from 'react-native-vector-icons/Fontisto'
+import Entype from 'react-native-vector-icons/Entypo'
 import styles from './styles.js'
 import Unit from '../../components/Units/index.js'
 
@@ -13,7 +14,7 @@ function WelcomeScreen(props) {
         navigation.navigate('Home')
     }
 
-    const onExplorePressed = () => {
+    const onLoginPressed = () => {
         navigation.navigate('Sign In')
     }
 
@@ -22,9 +23,10 @@ function WelcomeScreen(props) {
     <ImageBackground
         style={styles.background}
     >   
-            <TouchableOpacity 
-                    style={styles.searchBtn}
-                >
+            <TouchableOpacity style={styles.loginBtn} onPress={onLoginPressed}>
+                <Text style={styles.loginBtntext}><Entype name='login' color='white' size={20}/></Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.searchBtn}>
                     <Text style={styles.searchBtnText}><FontListo name='search' size={14} color='orange'/>  Where do you want to store?</Text>
             </TouchableOpacity>
 
@@ -37,13 +39,12 @@ function WelcomeScreen(props) {
                 />
                 <Text style={styles.welcomeTitle}>The storage choice of international community in Beijing</Text>
             </View>
-            
+
              <View style={styles.exploreContainer}>
            
             
                 <TouchableOpacity 
                     style={styles.exploreBtn}
-                    onPress={onExplorePressed}
                 >
                     <Text style={styles.exploreBtnText}>Explore nearby storages</Text>
                 </TouchableOpacity>
