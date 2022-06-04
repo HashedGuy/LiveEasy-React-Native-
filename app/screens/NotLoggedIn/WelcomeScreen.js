@@ -5,6 +5,7 @@ import FontListo from 'react-native-vector-icons/Fontisto'
 import Entype from 'react-native-vector-icons/Entypo'
 import styles from './styles.js'
 import Unit from '../../components/Units/index.js'
+import unitsData from '../../data/unitsData'
 
 function WelcomeScreen(props) {
 
@@ -18,6 +19,16 @@ function WelcomeScreen(props) {
         navigation.navigate('Sign In')
     }
 
+    const handleExploreNearbyUnits = () => {
+        navigation.navigate('Units List')
+    }
+
+    const handleUnitSearch = () => {
+        navigation.navigate('Unit Search')
+    }
+
+    const {name, description, oldPrice, newPrice, uri} = unitsData[0]
+
   return (
       <>
     <ImageBackground
@@ -26,7 +37,7 @@ function WelcomeScreen(props) {
             <TouchableOpacity style={styles.loginBtn} onPress={onLoginPressed}>
                 <Text style={styles.loginBtntext}><Entype name='login' color='white' size={20}/></Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.searchBtn}>
+            <TouchableOpacity style={styles.searchBtn} onPress={handleUnitSearch}>
                     <Text style={styles.searchBtnText}><FontListo name='search' size={14} color='orange'/>  Where do you want to store?</Text>
             </TouchableOpacity>
 
@@ -45,24 +56,21 @@ function WelcomeScreen(props) {
             
                 <TouchableOpacity 
                     style={styles.exploreBtn}
+                    onPress={handleExploreNearbyUnits}
                 >
-                    <Text style={styles.exploreBtnText}>Explore nearby storages</Text>
+                    <Text style={styles.exploreBtnText}>Explore nearby units</Text>
                 </TouchableOpacity>
                 <Unit 
-                    station = 'Wudakou'
-                    description = 'Find affordable storage units at a U-Haul near you. Select from thousands of available self-storage facilities and units across the US and Canada.'
-                    uri = 'https://images.unsplash.com/photo-1638847868668-a05a2f69622f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80'
-                    oldPrice = {223}
-                    newPrice = {186}
+                    station = {name}
+                    description = {description}
+                    uri = {uri}
+                    oldPrice = {oldPrice}
+                    newPrice = {newPrice}
                 />
               
          
            
         </View>
-    
-        {/* <View style={styles.featureButton}>
-            <Text style={styles.newFeature}>New! Freeze your pricing 🥶 </Text>
-        </View> */}
 
     </ImageBackground>
     </>

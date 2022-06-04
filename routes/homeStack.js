@@ -9,6 +9,8 @@ import ResetPassword from '../app/screens/NotLoggedIn/ResetPassword'
 import ResetPasswordNext from '../app/screens/NotLoggedIn/ResetPasswordNext'
 import WelcomeUserScreen from '../app/screens/LoggedIn/welcomeUser'
 import ProfileScreen from '../app/screens/LoggedIn/Profile'
+import UnitsList from '../app/screens/NotLoggedIn/UnitsList'
+import UnitSearch from '../app/screens/NotLoggedIn/unitSearch'
 
 
 const Stack = createNativeStackNavigator()
@@ -25,6 +27,8 @@ export const Navigator = () => {
         <Stack.Screen name='Reset Password' component={ResetPasswordNext} />
         <Stack.Screen name='Welcome User' component={WelcomeUserScreen} />
         <Stack.Screen name='Profile' component={ProfileScreen} />
+        <Stack.Screen name='Units List' component={UnitsList} />
+        <Stack.Screen name='Unit Search' component={UnitSearch} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,4 +1,5 @@
-import {StyleSheet} from 'react-native'
+import {StyleSheet, Dimensions} from 'react-native'
+import { vw, vh, vmin, vmax } from 'react-native-expo-viewport-units';
 
 const styles = StyleSheet.create({
     background: {
@@ -36,18 +37,18 @@ const styles = StyleSheet.create({
         marginBottom : 20,
     },
     exploreContainer: {
-        marginLeft: 10,
+        margin: 20,
         marginTop: 50
     },
     exploreBtn: {
         backgroundColor: 'white',
         padding: 12,
         borderRadius: 10,
-        maxWidth: '69%'
+        maxWidth: '58%',
     },
     exploreBtnText: {
         color: 'black',
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: 'bold'
     },
     loginBtn: {
@@ -57,6 +58,45 @@ const styles = StyleSheet.create({
     },
     loginBtntext: {
         textAlign: 'right'
+    },
+    exploreTitle: {
+        top: 100,
+        marginLeft: 20,
+        fontSize: 20,
+        color: 'white'
+    },
+    unitsContainer: {
+        top: 120,
+        marginHorizontal: 15,
+        marginBottom: 200
+    },
+    searchContainer: {  
+        top: 120,
+        marginLeft: 20,
+        width: '90%'
+    },
+    textInput: {
+      color: 'white',
+      fontSize: 16,
+      marginBottom: 20
+    },
+    searchResultBox: {
+        flexDirection: 'row',
+        paddingVertical: 20,
+        alignItems: 'center',
+        borderBottomWidth: 1,
+        borderColor: 'lightgray',
+     
+    },
+    iconContainer: {
+        marginRight: 15,
+        backgroundColor: 'lightblue',
+        padding: 7,
+        borderRadius: 10
+    },  
+    locationText: {
+        color: 'white',
+        fontSize: 20
     }
 })
 
