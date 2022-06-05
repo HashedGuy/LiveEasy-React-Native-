@@ -29,19 +29,22 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 50,
         borderColor: 'white',
+        backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
         width: 30,
         height: 30
     },
+    minusPlusText: {
+        color: 'black',
+        alignSelf: 'center',
+        fontWeight: 'bold'
+    },
     controllerText: {
         color: 'white',
         marginHorizontal: 15,
-        alignItems: 'center'
-    },
-    minusPlusText: {
-        color: 'white',
-        alignSelf: 'center'
+        alignItems: 'center',
+        fontWeight: 'bold'
     }
 })
 

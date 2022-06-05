@@ -1,13 +1,22 @@
 import { Text, View, ImageBackground, FlatList } from 'react-native'
-import React, { Component } from 'react'
+import React from 'react'
 import styles from './styles'
 import Unit from '../../components/Units'
 import unitsData from '../../data/unitsData'
+import Entypo from 'react-native-vector-icons/Entypo'
+import { useNavigation } from '@react-navigation/native'
 
 function UnitsList() {
+    
+    const navigation = useNavigation()
+
+    const handleBack = () => {
+        navigation.navigate('Home')
+      }
      return (
     <ImageBackground style={styles.background}>  
-        <View>
+        <View style={styles.unitListTitle}>
+            <Entypo onPress={handleBack} name='chevron-left' size={25} color='#e5e4e2' />  
             <Text style={styles.exploreTitle}>Explore available storage units</Text>
         </View>
         <View style={styles.unitsContainer}>

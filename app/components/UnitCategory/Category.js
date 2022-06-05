@@ -6,7 +6,7 @@ const Category = (props) => {
     const [unitCount, setUnitCount] = useState(0)
 
     const increamentCount = () => {
-        setUnitCount(Math.min(unitCount + 1, 10))
+        setUnitCount(Math.min(unitCount + 1, 9))
     }
 
     const decrementCount = () => {

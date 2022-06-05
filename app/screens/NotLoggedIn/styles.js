@@ -59,11 +59,15 @@ const styles = StyleSheet.create({
     loginBtntext: {
         textAlign: 'right'
     },
-    exploreTitle: {
+    unitListTitle: {
+        flexDirection: 'row',
         top: 100,
-        marginLeft: 20,
+        marginLeft: 15
+    },
+    exploreTitle: {
         fontSize: 20,
-        color: 'white'
+        color: 'white',
+        marginLeft: 20
     },
     unitsContainer: {
         top: 120,
@@ -75,10 +79,31 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         width: '90%'
     },
+
+    enterStationInput: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 20,
+        marginLeft: 10
+    },
     textInput: {
       color: 'white',
       fontSize: 16,
-      marginBottom: 20
+      marginRight: 10,
+      width: 250
+    },
+    cancelXBtn: {
+        backgroundColor: 'lightgray',
+        padding: 5,
+        borderRadius: 20,
+        width: 30,
+        height: 30,
+        alignItems: 'center'
+    },
+    cancelXText: {
+        color: 'gray',
+        fontSize: 15,
+        fontWeight: 'bold'
     },
     searchResultBox: {
         flexDirection: 'row',
@@ -101,6 +126,34 @@ const styles = StyleSheet.create({
     unitSelection: {
         top: 100,
         marginLeft: 30,
+    },
+    chosenLocationTitle: {
+        flexDirection: 'row',
+        marginBottom: 10,
+        borderBottomColor: '#e5e4e2',
+        borderBottomWidth: 1,
+        paddingVertical: 20
+    },
+    chosenLocationText: {
+        color: '#e5e4e2',
+        fontSize: 25,
+        fontWeight: 'bold'
+    },
+    chooseBtn: {
+        alignSelf: 'center',
+        backgroundColor: 'white',
+        marginVertical: 20,
+        borderWidth: 1,
+        borderRadius: 30,
+        borderColor: 'white',
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        width: '50%'
+    },
+    chooseBtnText: {
+        color: 'black',
+        fontWeight: 'bold',
+        fontSize: 16
     }
 })
 

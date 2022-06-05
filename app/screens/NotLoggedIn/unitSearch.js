@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import styles from './styles'
 import unitsData from '../../data/unitsData'
 import Entypo from 'react-native-vector-icons/Entypo'
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable'
 
 const UnitSearch = () => {
 
@@ -14,17 +15,25 @@ const UnitSearch = () => {
         navigation.navigate('Unit Selection')
     }
 
+    const handleCancelSearch=() => {
+        navigation.navigate('Home')
+    }
+
   return (
     <ImageBackground
         style={styles.background}
     >   
         <View style={styles.searchContainer}>
-        <TextInput
-            style={styles.textInput}
-            placeholder={'Enter the closest subway station'}
-            value={inputText}
-            onChangeText={setInputText}
-        />
+            <View style={styles.enterStationInput}>
+                <TextInput
+                    style={styles.textInput}
+                    placeholder={'Enter the closest subway station'}
+                    value={inputText}
+                    onChangeText={setInputText}
+                />
+                <Pressable onPress={handleCancelSearch} style={styles.cancelXBtn}><Text style={styles.cancelXText}>X</Text></Pressable>
+            </View>
+       
         <FlatList
             keyExtractor={(item)=>item.id}
             data={unitsData}
