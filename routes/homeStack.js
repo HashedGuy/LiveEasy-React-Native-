@@ -11,6 +11,7 @@ import WelcomeUserScreen from '../app/screens/LoggedIn/welcomeUser'
 import ProfileScreen from '../app/screens/LoggedIn/Profile'
 import UnitsList from '../app/screens/NotLoggedIn/UnitsList'
 import UnitSearch from '../app/screens/NotLoggedIn/unitSearch'
+import UnitSelection from '../app/screens/NotLoggedIn/UnitSelection'
 
 
 const Stack = createNativeStackNavigator()
@@ -29,6 +30,7 @@ export const Navigator = () => {
         <Stack.Screen name='Profile' component={ProfileScreen} />
         <Stack.Screen name='Units List' component={UnitsList} />
         <Stack.Screen name='Unit Search' component={UnitSearch} />
+        <Stack.Screen name='Unit Selection' component={UnitSelection} />
       </Stack.Navigator>
     </NavigationContainer>
   );

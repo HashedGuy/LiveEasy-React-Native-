@@ -97,6 +97,10 @@ const styles = StyleSheet.create({
     locationText: {
         color: 'white',
         fontSize: 20
+    },
+    unitSelection: {
+        top: 100,
+        marginLeft: 30,
     }
 })
 
