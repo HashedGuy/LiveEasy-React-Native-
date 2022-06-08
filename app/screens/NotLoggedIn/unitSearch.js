@@ -40,7 +40,7 @@ const UnitSearch = () => {
             renderItem={({item}) => (
                 <TouchableOpacity style={styles.searchResultBox} onPress={handleUnitSelection}>
                     <View style={styles.iconContainer}>
-                        <Entypo name='location-pin' size={25} color='yellow'></Entypo>
+                        <Entypo name='location-pin' size={25} color='white'></Entypo>
                     </View>
                     <Text style={styles.locationText}>{item.name}</Text>
                 </TouchableOpacity>

@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         padding: 12,
         borderRadius: 30,
         maxWidth: '75%',
-        top: 20,
+        backgroundColor: '#FAF8F8',
         alignSelf: 'center',
         zIndex: 100
     },
@@ -113,8 +113,8 @@ const styles = StyleSheet.create({
     },
     iconContainer: {
         marginRight: 15,
-        backgroundColor: 'lightblue',
-        padding: 7,
+        backgroundColor: 'gold',
+        padding: 5,
         borderRadius: 10
     },  
     locationText: {
