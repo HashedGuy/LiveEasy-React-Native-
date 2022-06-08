@@ -70,12 +70,10 @@ const styles = StyleSheet.create({
         marginLeft: 20
     },
     unitsContainer: {
-        top: 120,
-        marginHorizontal: 15,
-        marginBottom: 200
+        marginHorizontal: 15
     },
     searchContainer: {  
-        top: 120,
+        top: 20,
         marginLeft: 20,
         width: '90%'
     },
@@ -124,7 +122,7 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     unitSelection: {
-        top: 100,
+        top: 20,
         marginLeft: 30,
     },
     chosenLocationTitle: {
@@ -154,6 +152,9 @@ const styles = StyleSheet.create({
         color: 'black',
         fontWeight: 'bold',
         fontSize: 16
+    },
+    unitInfoText: {
+        color: 'white'
     }
 })
 

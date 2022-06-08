@@ -15,10 +15,7 @@ function UnitsList() {
       }
      return (
     <ImageBackground style={styles.background}>  
-        <View style={styles.unitListTitle}>
-            <Entypo onPress={handleBack} name='chevron-left' size={25} color='#e5e4e2' />  
-            <Text style={styles.exploreTitle}>Explore available storage units</Text>
-        </View>
+  
         <View style={styles.unitsContainer}>
             <FlatList
                 numColumns={1}

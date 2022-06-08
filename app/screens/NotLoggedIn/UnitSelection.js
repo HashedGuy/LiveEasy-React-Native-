@@ -11,13 +11,14 @@ const UnitSelection = () => {
   const handleBack = () => {
     navigation.navigate('Unit Search')
   }
+
+  const handleChoose = () => {
+    navigation.navigate('Units List')
+  }
   return (
     <ImageBackground style={styles.background}>   
       <View style={styles.unitSelection}>
-        <View style={styles.chosenLocationTitle}>
-          <Entypo onPress={handleBack} name='chevron-left' size={25} color='#e5e4e2' style={{marginRight: 95}}/>
-          <Text style={styles.chosenLocationText}>Wudakou</Text>
-        </View>
+       
         <Category
           unitName='Small'
           unitDesc='Contains max. six (4cm x 4cm) boxes'
@@ -34,9 +35,13 @@ const UnitSelection = () => {
           unitName='Xtra-Large'
           unitDesc='Contains max. six (4cm x 4cm) boxes'
         />
-        <TouchableOpacity style={styles.chooseBtn}>
-          <Text style={styles.chooseBtnText}>Choose</Text>
+        <TouchableOpacity style={styles.chooseBtn} onPress={handleChoose}>
+          <Text style={styles.chooseBtnText}>Search</Text>
         </TouchableOpacity>
+
+        <Pressable>
+          <Text style={styles.unitInfoText}>More info about unit sizes</Text>
+        </Pressable>
       </View>
     
     </ImageBackground>
